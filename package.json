@@ -13,7 +13,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:dts": "tsc --noEmit --isolatedModules build/template-ts.d.ts",
-    "docs": "typedoc src/index.ts --out docs",
+    "docs": "typedoc src/main/index.ts --out docs",
     "release": "semantic-release"
   },
   "main": "build/template-ts.cjs.js",
