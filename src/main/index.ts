@@ -1,4 +1,5 @@
-import { getGreeting } from './greeting'
-export { getGreeting }
+import {getGreeting} from './greeting';
 
-console.log(getGreeting('World'))
+export {getGreeting};
+
+console.log(getGreeting('World'));

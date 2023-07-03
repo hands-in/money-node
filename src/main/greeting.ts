@@ -5,4 +5,4 @@
  *  getGreeting("John"); // "Hello, John!"
  * ```
  * */
-export const getGreeting = (name: string) => `Hello ${name}!`
+export const getGreeting = (name: string): string => `Hello ${name}!`;
