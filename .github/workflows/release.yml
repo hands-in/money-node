@@ -1,8 +1,10 @@
 name: Release
 
 on:
-  # TODO After publishing repository change this to trigger on push to main and test
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
 
 jobs:
   release:
@@ -14,16 +16,66 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
 
       - name: Build library
-        run: yarn build
+        run: pnpm build
 
       - name: Release
-        run: yarn release
+        run: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           HUSKY: 0
+
+      - name: Create the docs
+        run: pnpm run docs
+
+      - name: Collect coverage report
+        run: pnpm run test:coverage
+
+      - name: Create Coverage Badges
+        uses: jaywcjlove/coverage-badges-cli@e07f25709cd25486855c1ba1b26da53576ff3620
+        with:
+          source: coverage/coverage-summary.json
+          output: coverage/lcov-report/badges.svg
+
+      - name: Prepare folder for gh-pages
+        run: |
+          mkdir gh-pages
+          mv docs ./gh-pages
+          mv coverage/lcov-report ./gh-pages/coverage
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
+        with:
+          branch: gh-pages
+          folder: gh-pages

@@ -1,7 +1,9 @@
 # Reference on this file: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 name: Lint, build and test
+
 on:
-  pull_request:
+  push:
+
 jobs:
   build:
     name: Lint, build and test
@@ -10,17 +12,44 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Node setup
+      
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x.x'
-      - name: Install Node packages
-        run: npm ci
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
+      
       - name: Tests
-        run: npm run test
+        run: pnpm run test
+
       - name: Build
-        run: npm run build
+        run: pnpm run build
+
       - name: Typecheck
-        run: npm run test:dts
+        run: pnpm run test:dts
