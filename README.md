@@ -1,19 +1,21 @@
 <p align="center">
+  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
+      <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
+  </a>
   <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml">
     <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml/badge.svg" alt="Build status">
   </a>
   <a href="https://hands-in.github.io/library-template-typescript/coverage/">
-    <img src="https://hands-in.github.io/library-template-typescript/coverage/badges.svg" alt="coverage">
-  </a>
-  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
-    <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license">
+    <object data="https://hands-in.github.io/library-template-typescript/coverage/badges.svg" type="image/png">
+      <img src="https://img.shields.io/badge/-Coverage_report-lightgrey" alt="coverage">
+    </object>
   </a>
    <a href="https://hands-in.github.io/library-template-typescript/docs/">
      <img src="https://img.shields.io/badge/-Documentation-green" alt="Documentation">
    </a>
+   <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license">
+  </a>
 </p>
 This is a template repository for creating TypeScript libraries.
 
