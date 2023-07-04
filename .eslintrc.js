@@ -2,17 +2,17 @@ module.exports = {
   extends: ['@handsin/eslint-config/javascript'],
   overrides: [
     {
-      parser: '@typescript-eslint/parser',
       files: ['*.ts'],
       extends: ['@handsin/eslint-config/typescript'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
       },
     },
     {
-      parser: '@typescript-eslint/parser',
       files: ['*.tsx'],
       extends: ['@handsin/eslint-config/react/typescript'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
       },
