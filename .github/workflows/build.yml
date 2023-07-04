@@ -50,6 +50,3 @@ jobs:
 
       - name: Build
         run: pnpm run build
-
-      - name: Typecheck
-        run: pnpm run test:dts

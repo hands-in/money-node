@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "src",
-    "outDir": "build",
+    "rootDir": "./src",
+    "outDir": "./build",
 
     "jsx": "react",
     "target": "esnext",
     "module": "es6",
     "moduleResolution": "node",
-
+    "lib": ["es6", "dom"],
+    
     "strict": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -20,6 +21,6 @@
     "noImplicitReturns": true,
     "exactOptionalPropertyTypes": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["build", "node_modules"]
+  "include": ["./src/**/*"],
+  "exclude": ["./build", "node_modules"]
 }
