@@ -2,12 +2,15 @@
   <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
       <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
   </a>
+  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
+      <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
+  </a>
   <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml">
     <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml/badge.svg" alt="Build status">
   </a>
   <a href="https://hands-in.github.io/library-template-typescript/coverage/">
     <object data="https://hands-in.github.io/library-template-typescript/coverage/badges.svg" type="image/png">
-      <img src="https://img.shields.io/badge/-Coverage_report-lightgrey" alt="coverage">
+      <img src="https://img.shields.io/badge/Coverage_report-lightgrey" alt="coverage">
     </object>
   </a>
    <a href="https://hands-in.github.io/library-template-typescript/docs/">
