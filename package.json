@@ -6,7 +6,7 @@
   "author": "Hands In Ltd. (https://handsin.com)",
   "license": "MIT",
   "engines": {
-    "node": "16.X.X"
+    "node": "18.X.X"
   },
   "scripts": {
     "prepare": "husky install",
