@@ -1,0 +1,2 @@
+<%= pkg.name %> v<%= pkg.version %> - Copyright (c) Hands In Ltd. <%= new Date().getFullYear() %> (https://handsin.com)
+Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
