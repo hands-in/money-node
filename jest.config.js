@@ -12,6 +12,8 @@ module.exports = {
     'json-summary',
     ['text', {file: 'coverage.txt', path: './'}],
   ],
-  modulePaths: [compilerOptions.baseUrl],
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+  modulePaths: compilerOptions.baseUrl ? [compilerOptions.baseUrl] : undefined,
+  moduleNameMapper: compilerOptions.paths
+    ? pathsToModuleNameMapper(compilerOptions.paths)
+    : undefined,
 };
