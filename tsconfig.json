@@ -7,7 +7,6 @@
     "target": "esnext",
     "module": "es6",
     "moduleResolution": "node",
-    "lib": ["ES2018", "dom"],
     
     "strict": true,
     "resolveJsonModule": true,
