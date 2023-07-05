@@ -50,10 +50,9 @@ For API reference we use `typedoc` package and publish documentation in GitHub P
 Publishing to NPM is automated thanks to [semantic-release](https://github.com/semantic-release/semantic-release).
 On every push to `main` branch, it will analyze commits and release new versions accordingly to changes.
 
-To set it up:
+To set it up, in the `package.json`:
 
-1. Add `NPM_AUTH_TOKEN` to the repository secrets area
-2. Add `GH_RELEASE_TOKEN` to the repository secrets area, it should have the following permissions: `public_repo`, or `repo` if your repository is private.
-   Thanks to that, you will get automatic releases on GitHub, comments on issues and more!
-3. Package will publish automatically to NPM when there are relevant changes!
+1. Set the `name: @handsin/package-name`, remember to follow the Hands In package naming convention
+2. Set `private: false`, this will make the package publicly available.
+3. 🚀 Start making commits!
 
