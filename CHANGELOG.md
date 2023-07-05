@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/hands-in/money-node/compare/v1.2.1...v1.2.2) (2023-07-05)
+
+
+### Bug Fixes
+
+* **fix build:** fix build ([2c8060d](https://github.com/hands-in/money-node/commit/2c8060d21d2fbd64870f5da4af9f4852eefd806c))
+
 ## [1.2.1](https://github.com/Hands-In/money-node/compare/v1.2.0...v1.2.1) (2023-07-05)
 
 
