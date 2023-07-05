@@ -33,7 +33,6 @@ export default class MoneyUtils {
       .toLocaleString(options?.locales, {
         style: 'currency',
         currency: currencyCode,
-        currencyDisplay: 'code',
       })
       .replace(currencyCode, '')
       .trim();
@@ -44,7 +43,7 @@ export default class MoneyUtils {
       formattedFloatMoney,
     ]
       .filter(s => s !== undefined)
-      .join();
+      .join('');
   }
 
   static getMoneyAsFloat(money: Money): string {

@@ -1,10 +1,4 @@
 <p align="center">
-  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
-      <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
-  </a>
-  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml">
-      <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/release.yml/badge.svg" alt="Release status">
-  </a>
   <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml">
     <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml/badge.svg" alt="Build status">
   </a>

@@ -1,26 +1,95 @@
-# Reference on this file: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
-name: Lint, build and test
+name: Lint, build, test and release
+
 on:
-  pull_request:
+  push:
+
 jobs:
   build:
-    name: Lint, build and test
+    name: Lint, build, test
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Node setup
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x.x'
-      - name: Install Node packages
-        run: npm ci
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
+
       - name: Tests
-        run: npm run test
+        run: pnpm run test
+
       - name: Build
-        run: npm run build
-      - name: Typecheck
-        run: npm run test:dts
+        run: pnpm run build
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_RELEASE_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+  
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+      
+      - name: Release new version
+        run: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          HUSKY: 0
+
+      - name: Create the docs
+        run: pnpm run docs
+
+      - name: Collect coverage report
+        run: pnpm run test:coverage
+
+      - name: Create Coverage Badges
+        uses: jaywcjlove/coverage-badges-cli@e07f25709cd25486855c1ba1b26da53576ff3620
+        with:
+          source: coverage/coverage-summary.json
+          output: coverage/lcov-report/badges.svg
+
+      - name: Prepare folder for gh-pages
+        run: |
+          mkdir gh-pages
+          mv docs ./gh-pages
+          mv coverage/lcov-report ./gh-pages/coverage
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
+        with:
+          branch: gh-pages
+          folder: gh-pages
