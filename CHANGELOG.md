@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/Hands-In/money-node/compare/v1.1.0...v1.2.0) (2023-07-05)
+
+
+### Features
+
+* **dependabot.yml:** auto-merge dependency vulnerabilities ([204773b](https://github.com/Hands-In/money-node/commit/204773bc83be6046ed7073697c7c3c3d251d5a6d))
+
 ## [1.1.0](https://github.com/Hands-In/money-node/compare/v1.0.0...v1.1.0) (2023-07-05)
 
 
