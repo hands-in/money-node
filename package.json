@@ -24,7 +24,7 @@
   "files": [
     "build"
   ],
-  "packageManager": "pnpm@7.28.0",
+  "packageManager": "pnpm@8.6.5",
   "sideEffects": false,
   "lint-staged": {
     "*.{js,ts}": "pnpm run lint:fix"
