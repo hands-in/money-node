@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/Hands-In/money-node/compare/v1.0.0...v1.1.0) (2023-07-05)
+
+
+### Features
+
+* set pkg access publci ([a58f02f](https://github.com/Hands-In/money-node/commit/a58f02f9c48e4365aa06f4f67af1f971ee98c72e))
+
 ## 1.0.0 (2023-07-05)
 
 
