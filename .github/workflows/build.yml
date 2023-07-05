@@ -60,11 +60,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Download build
-        uses: actions/download-artifact@master
-        with:
-          name: build
-          path: build
+      - name: Build
+        run: pnpm run build
       
       - name: Release new version
         run: pnpm run release
