@@ -14,11 +14,11 @@ describe('Money Utils', () => {
     expect(MoneyUtils.formatMoney(THIRTY_THOUSAND_YEN)).toEqual('¥30,000');
   });
 
-  it('expect formatMoney to return "JPY ¥30,000" when input is 30000JPY and includeCurrencyCode is true', () => {
+  it('expect formatMoney to return "JP¥30,000" when input is 30000JPY and includeCurrencyCode is true', () => {
     const THIRTY_THOUSAND_YEN = {amount: 30_000, currency: Currency.JPY};
 
     expect(
       MoneyUtils.formatMoney(THIRTY_THOUSAND_YEN, {includeCurrencyCode: true})
-    ).toEqual('JPY ¥30,000');
+    ).toEqual('JP¥30,000');
   });
 });

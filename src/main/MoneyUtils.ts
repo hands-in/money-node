@@ -27,23 +27,13 @@ export default class MoneyUtils {
 
     const currencyCode = money.currency.toUpperCase();
 
-    const currencySymbol = CurrencyUtils.getCurrencySymbol(money.currency);
+    const formattedFloatMoney = Intl.NumberFormat(options?.locales, {
+      style: 'currency',
+      currency: currencyCode,
+      currencyDisplay: options?.includeCurrencyCode ? 'symbol' : 'narrowSymbol',
+    }).format(floatAmount);
 
-    const formattedFloatMoney = floatAmount
-      .toLocaleString(options?.locales, {
-        style: 'currency',
-        currency: currencyCode,
-      })
-      .replace(currencyCode, '')
-      .trim();
-
-    return [
-      options?.includeCurrencyCode ? `${currencyCode} ` : undefined,
-      currencySymbol,
-      formattedFloatMoney,
-    ]
-      .filter(s => s !== undefined)
-      .join('');
+    return formattedFloatMoney;
   }
 
   static getMoneyAsFloat(money: Money): string {
