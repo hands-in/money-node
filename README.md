@@ -1,13 +1,13 @@
 <p align="center">
-  <a href="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml">
-    <img src="https://github.com/hands-in/library-template-typescript/actions/workflows/build.yml/badge.svg" alt="Build status">
+  <a href="https://github.com/hands-in/money-node/actions/workflows/build.yml">
+    <img src="https://github.com/hands-in/money-node/actions/workflows/build.yml/badge.svg" alt="Build status">
   </a>
-  <a href="https://hands-in.github.io/library-template-typescript/coverage/">
-    <object data="https://hands-in.github.io/library-template-typescript/coverage/badges.svg" type="image/png">
+  <a href="https://hands-in.github.io/money-node/coverage/">
+    <object data="https://hands-in.github.io/money-node/coverage/badges.svg" type="image/png">
       <img src="https://img.shields.io/badge/Coverage_report-lightgrey" alt="coverage">
     </object>
   </a>
-   <a href="https://hands-in.github.io/library-template-typescript/docs/">
+   <a href="https://hands-in.github.io/money-node/docs/">
      <img src="https://img.shields.io/badge/-Documentation-green" alt="Documentation">
    </a>
    <a href="https://opensource.org/licenses/MIT">
