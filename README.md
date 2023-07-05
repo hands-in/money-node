@@ -3,8 +3,8 @@
     <img src="https://github.com/hands-in/money-node/actions/workflows/build.yml/badge.svg" alt="Build status">
   </a>
   <a href="https://hands-in.github.io/money-node/coverage">
-    <object data="https://hands-in.github.io/money-node/coverage/badges.svg" type="image/png">
-      <img src="https://img.shields.io/badge/Coverage_report-lightgrey" alt="coverage">
+    <object data="https://img.shields.io/badge/Coverage_report-lightgrey" type="image/png">
+      <img src="https://hands-in.github.io/money-node/coverage/badges.svg" alt="coverage">
     </object>
   </a>
    <a href="https://hands-in.github.io/money-node/docs">
