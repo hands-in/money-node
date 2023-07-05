@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Hands-In/library-template-typescript/compare/v1.0.0...v1.0.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* **build.yml:** config fix ([f7c4ed1](https://github.com/Hands-In/library-template-typescript/commit/f7c4ed1fcdd4a0151384c6b475d201482aee4949))
+
 ## 1.0.0 (2023-07-04)
 
 
