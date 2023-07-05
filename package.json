@@ -1,14 +1,17 @@
 {
-  "name": "@handsin/money",
-  "description": "Hands In's internal safe javascript money library",
   "private": false,
-  "version": "1.2.1",
-  "author": "Hands In Ltd. (https://handsin.com)",
-  "license": "MIT",
-  "engines": {
-    "node": "16.X.X"
+  "name": "@handsin/money",
+  "description": "Hands In's safe javascript money library",
+  "publishConfig": {
+    "access": "public", 
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hands-in/money-node.git"
   },
   "scripts": {
+    "preinstall": "npx -y only-allow pnpm",
     "prepare": "husky install",
     "build": "rimraf build && rollup -c rollup.config.mjs",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
@@ -18,13 +21,20 @@
     "docs": "typedoc src/main/index.ts --out docs",
     "release": "semantic-release"
   },
+  "version": "1.2.1",
+  "author": "Hands In Ltd. (https://handsin.com)",
+  "license": "MIT",
+  "engines": {
+    "node": "16.X.X",
+    "pnpm": "8.X.X"
+  },
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "types": "build/index.d.ts",
   "files": [
     "build"
   ],
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.6",
   "sideEffects": false,
   "lint-staged": {
     "*.{js,ts}": "pnpm run lint:fix"
@@ -46,7 +56,6 @@
     "@semantic-release/github": "8",
     "@semantic-release/npm": "9",
     "@semantic-release/release-notes-generator": "10",
-    "@types/big.js": "^6.1.6",
     "@types/jest": "^29.5.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",

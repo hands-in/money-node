@@ -25,7 +25,7 @@ jobs:
         id: pnpm-install
         with:
           run_install: false
-  
+
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
@@ -56,7 +56,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.repository != 'hands-in/library-template-typescript'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -65,7 +65,7 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-  
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -76,7 +76,7 @@ jobs:
         id: pnpm-install
         with:
           run_install: false
-  
+
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
@@ -96,7 +96,7 @@ jobs:
 
       - name: Build
         run: pnpm run build
-      
+
       - name: Release new version
         run: pnpm run release
         env:
