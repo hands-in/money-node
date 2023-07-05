@@ -1,3 +1,13 @@
+## [1.2.1](https://github.com/Hands-In/money-node/compare/v1.2.0...v1.2.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* l ([66481d1](https://github.com/Hands-In/money-node/commit/66481d1d434ef2a113afd84b2830d56ea6f678f1))
+* workflow fix ([6436912](https://github.com/Hands-In/money-node/commit/6436912307ac8e857fea695578be65e4793fc31a))
+* **exported types for re-ues:** exported [@types](https://github.com/types) ([c1af2df](https://github.com/Hands-In/money-node/commit/c1af2dfa16d410f72e27daf26c4bd756f26b7664))
+* **pnpm-lock.json:** update ([f802357](https://github.com/Hands-In/money-node/commit/f8023579c788dc24b199f13cb782fc2714a55434))
+
 ## [1.2.0](https://github.com/Hands-In/money-node/compare/v1.1.0...v1.2.0) (2023-07-05)
 
 

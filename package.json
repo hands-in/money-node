@@ -2,7 +2,7 @@
   "name": "@handsin/money",
   "description": "Hands In's internal safe javascript money library",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Hands In Ltd. (https://handsin.com)",
   "license": "MIT",
   "engines": {
