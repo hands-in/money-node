@@ -11,7 +11,6 @@
     "url": "https://github.com/hands-in/money-node.git"
   },
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm",
     "prepare": "husky install",
     "build": "rimraf build && rollup -c rollup.config.mjs",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",

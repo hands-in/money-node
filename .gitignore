@@ -12,3 +12,7 @@ coverage.txt
 .vscode/
 yarn-error.log
 docs
+
+# Lock files
+package-lock.json
+yarn.lock
